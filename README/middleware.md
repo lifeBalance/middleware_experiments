@@ -97,6 +97,56 @@ $ git checkout tags/v0.3
 $ npm run dev
 ```
 
+## Putting our middleware in external modules
+We've just seen how to write our middleware functions in the entry point of our application. But that's not probably a good idea, since we are gonna be adding quite a bit of middleware and `index.js` would become cluttered very fast.
+
+A better solution would be putting our middleware in a separate file and import it into our app. For example, we've created a new file named `middleware.js` in the root directory. These are the contents:
+
+```js
+module.exports = {
+  three: function (req, res, next) {
+    console.log("#3: I'm middleware number three.");
+    res.write("#3: I'm middleware number three.\n");
+    next();
+  }
+};
+```
+
+Nothing fancy, we just log some message to the terminal and write the same message to the response stream. Now we just have to import the module into our app:
+
+```js
+var middleware = require('./middleware');
+```
+
+And mount it using the `app.use` method, in this case after `middlewareTwo`:
+
+```js
+app.use(function middlewareTwo(req,res,next){
+  console.log("#2: I'm middleware number two.");
+  res.write("#2: I'm middleware number two.\n");
+  next();
+});
+
+app.use(middleware.three); // <= Our new middleware.
+```
+
+If we make a request:
+
+```
+$ curl http://localhost:3000/
+#2: I'm middleware number two.
+#3: I'm middleware number three.
+#1: I'm middleware number one.
+Hello world!
+```
+
+We can see how the order in which we call the middleware matters.
+
+```bash
+$ git checkout tags/v0.4
+$ npm run dev
+```
+
 ---
 [:arrow_backward:][back] ║ [:house:][home] ║ [:arrow_forward:][next]
 
