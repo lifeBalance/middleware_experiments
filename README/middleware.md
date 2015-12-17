@@ -67,6 +67,35 @@ $ git checkout tags/v0.2
 $ npm run dev
 ```
 
+## Other ways of adding middleware
+Express provides a method for mounting middleware at a given path, for example:
+
+```js
+app.use(function middlewareTwo(req,res,next){
+  res.write("#2: I'm middleware number two.\n");
+  next();
+});
+```
+
+In this case we're not specifying any **path**, so it defaults to `/`, later we'll see some examples where we pass a path as a first argument to `app.use`. Let's run curl to see what we get:
+
+```bash
+$ curl http://localhost:3000/
+#2: I'm middleware number two.
+#1: I'm middleware number one.
+Hello world!
+```
+
+That means that `middlewareTwo` runs in the first place, before `middlewareOne`. Check this image:
+
+![i1](images/middlewareTwo.png)
+
+You can check out the project at this stage using:
+
+```bash
+$ git checkout tags/v0.3
+$ npm run dev
+```
 
 ---
 [:arrow_backward:][back] ║ [:house:][home] ║ [:arrow_forward:][next]
