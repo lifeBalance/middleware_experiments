@@ -2,6 +2,8 @@
 This is an [Express.js][1] small project to better understand the concept of **middleware**. A good grasp on how middleware works is essential to understand Express itself.
 
 * [Introduction][l1]
+* [Writting middleware][l2]
+
 
 ---
 [:arrow_backward:][back] ║ [:house:][home] ║ [:arrow_forward:][next]
@@ -16,3 +18,4 @@ This is an [Express.js][1] small project to better understand the concept of **m
 
 <!-- menu -->
 [l1]: README/intro.md
+[l2]: README/middleware.md

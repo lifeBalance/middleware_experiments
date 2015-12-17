@@ -5,9 +5,18 @@ var app = express(); // Instantiate an express object.
 app.set('port', process.env.PORT || 3000);
 app.set('host', process.env.HOST || 'localhost');
 
+// Middleware
+function middlewareOne(){
+  function one(req, res, next) {
+    res.write("#1: I'm middleware number one.\n");
+    next();
+  }
+  return one;
+}
+
 // Routes
-app.get('/', function (req, res) {
-  res.send("Hello world!\n");
+app.get('/', middlewareOne(), function (req, res) {
+  res.end("Hello world!\n");
 });
 
 // Server

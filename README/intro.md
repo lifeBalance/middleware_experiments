@@ -94,7 +94,7 @@ Middleware is just any code that is executed right after a request hits the endp
 <!-- navigation -->
 [home]: ../README.md
 [back]: ../README.md
-[next]: #
+[next]: middleware.md
 
 <!-- links -->
 [1]: https://www.npmjs.com/package/nodemon
