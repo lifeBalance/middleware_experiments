@@ -1,5 +1,6 @@
 var express = require('express');
 var app = express(); // Instantiate an express object.
+var middleware = require('./middleware');
 
 // Settings
 app.set('port', process.env.PORT || 3000);
@@ -20,6 +21,8 @@ app.use(function middlewareTwo(req,res,next){
   res.write("#2: I'm middleware number two.\n");
   next();
 });
+
+app.use(middleware.three);
 
 // Routes
 app.get('/', middlewareOne(), function (req, res) {
