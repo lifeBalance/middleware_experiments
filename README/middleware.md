@@ -153,7 +153,7 @@ $ npm run dev
 <!-- navigation -->
 [home]: ../README.md
 [back]: intro.md
-[next]: #
+[next]: middleware2.md
 
 <!-- links -->
 [1]: http://expressjs.com/
