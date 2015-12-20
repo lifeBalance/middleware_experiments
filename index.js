@@ -7,19 +7,20 @@ app.set('port', process.env.PORT || 3000);
 app.set('host', process.env.HOST || 'localhost');
 
 // Mounting the middleware
-app.use('/', middleware.one, middleware.two);
-app.use('/about', middleware.three);
+app.use('/$', middleware.one);
+app.use('/about$', middleware.two);
+app.use('/about/me$', middleware.three);
 
 // Routes
-app.get('/', function (req, res) {
+app.get('/$', function (req, res) {
   res.end("Hello world!\n");
 });
 
-app.get('/about', function (req, res) {
+app.get('/about$', function (req, res) {
   res.end('What do you wanna know cowboy?\n');
 });
 
-app.get('/about/me', function (req, res) {
+app.get('/about/me$', function (req, res) {
   res.end("I'm very cool!\n");
 });
 

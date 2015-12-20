@@ -4,6 +4,7 @@ This is an [Express.js][1] small project to better understand the concept of **m
 * [Introduction][l1]
 * [Writting middleware][l2]
 * [Application level middleware][l3]
+* [Controlling App level middleware][l4]
 
 
 ---
@@ -21,3 +22,4 @@ This is an [Express.js][1] small project to better understand the concept of **m
 [l1]: README/intro.md
 [l2]: README/middleware.md
 [l3]: README/middleware2.md
+[l4]: README/middleware3.md

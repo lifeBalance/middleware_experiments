@@ -147,7 +147,7 @@ Even though we didn't explicitly mount any middleware at `/about/me` path, becau
 <!-- navigation -->
 [home]: ../README.md
 [back]: middleware.md
-[next]: #
+[next]: middleware3.md
 
 <!-- links -->
 [1]: http://expressjs.com/
