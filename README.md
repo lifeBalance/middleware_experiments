@@ -3,7 +3,7 @@ This is an [Express.js][1] small project to better understand the concept of **m
 
 * [Introduction][l1]
 * [Writting middleware][l2]
-* [Mounting middleware at different paths][l3]
+* [Application level middleware][l3]
 
 
 ---
